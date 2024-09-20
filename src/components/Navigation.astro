@@ -1,107 +1,62 @@
 ---
 import SocialIcons from "./SocialIcons.astro";
+import MenuButton from "./MenuButton.astro";
+
 ---
 
-<nav x-data="{showMenu: false}">
+<nav x-data="{showMenu: false, currentUrl: window.location.pathname}" class="border-b border-b-slate-600 border-1">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <div class="flex items-center">
-        <div class="flex-shrink-0">
-          <SocialIcons />
-        </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a
-              href="#"
-              class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-              >Home
-            </a>
-            <a
-              href="#"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >Projects
-            </a>
-            <a
-              href="#"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >Contact
-            </a>
+    <div class="mx-auto max-w-3xl">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex justify-between items-center w-full">
+          <div class="flex-shrink-0">
+            <SocialIcons />
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a
+                href="/"
+                class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                >Home
+              </a>
+              <a
+                href="/about/"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >About me
+              </a>
+              <a
+                href="/contact/"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >Contact
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="-mr-2 flex sm:hidden">
-        <!-- Mobile menu button -->
-        <button
-          @click="showMenu = !showMenu"
-          type="button"
-          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="absolute -inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
-          <svg
-            class="block h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-          </svg>
-          <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-          <svg
-            class="hidden h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+        <MenuButton />
       </div>
     </div>
-  </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div x-show="showMenu" class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a
-        href="#"
-        class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-        >Home
-      </a>
-      <a
-        href="#"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >Projects
-      </a>
-      <a
-        href="#"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-        >Contact
-      </a>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div x-show="showMenu" class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a
+          href="/"
+          class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+          >Home
+        </a>
+        <a
+          href="/about/"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >About me
+        </a>
+        <a
+          href="/contact/"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Contact
+        </a>
+      </div>
     </div>
   </div>
 </nav>
