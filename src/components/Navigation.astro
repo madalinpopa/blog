@@ -23,6 +23,16 @@ const currentPath = Astro.url.pathname;
                 >Home
               </a>
               <a
+                href="/services/"
+                class={currentPath === "/services/" ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"}
+                >How I Can Help You
+              </a>
+              <a
+                href="/experience/"
+                class={currentPath === "/experience/" ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"}
+                >Experience
+              </a>
+              <a
                 href="/about/"
                 class={currentPath === "/about/" ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"}
                 >About me
@@ -47,6 +57,16 @@ const currentPath = Astro.url.pathname;
           href="/"
           class={currentPath === "/" ? "bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" : "text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"}
           >Home
+        </a>
+        <a
+          href="/services/"
+          class={currentPath === "/about/" ? "bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" : "text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"}
+          >How I Can Help You
+        </a>
+        <a
+          href="/experience/"
+          class={currentPath === "/about/" ? "bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" : "text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"}
+          >Experience
         </a>
         <a
           href="/about/"
