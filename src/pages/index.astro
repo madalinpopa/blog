@@ -1,9 +1,36 @@
 ---
-import PageContent from "../layouts/PageContent.astro"
-import Hero from "../components/Hero.astro"
+import PageContent from "../layouts/PageContent.astro";
+import Hero from "../components/Hero.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <PageContent>
+  <div class="space-y-12">
     <Hero />
+    <div>
+      <SectionTitle title="Core Expertise" />
+      <ul class="pt-6 list-disc ml-4 space-y-4">
+        <li><span class="font-semibold">DevOps & Automation:</span> Docker, Kubernetes, Ansible, Terraform</li>
+        <li><span class="font-semibold">Cloud Solutions:</span> Azure, AWS</li>
+        <li><span class="font-semibold">CI/CD Pipelines:</span> GitHub Actions, Azure Pipelines, Jenkins</li>
+        <li><span class="font-semibold">Programming Languages:</span> Python, Go</li>
+        <li>
+          <span class="font-semibold">Infrastructure as Code (IaC):</span> Terraform, Azure Resource Manager (ARM)
+          Templates
+        </li>
+      </ul>
+    </div>
+    <div>
+        <div>
+            <p>
+                Need help with your cloud infrastructure, DevOps pipelines, or automation? Whether you’re looking for advice or collaboration on tech projects, don’t hesitate to reach out!
+            </p>
+        </div>
+        <div class="flex gap-6">
+            <CTAButton href="/services/" text="I Can Help You With This" />
+            <CTAButton href="/contact/" text="Get in Touch" />
+          </div>
+    </div>
+  </div>
 </PageContent>
-
