@@ -1,7 +1,11 @@
 {
-    "responseOverrides": {
-      "404": {
-        "rewrite": "/404.html"
-      }
-    }
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  },
+  "globalHeaders": {
+    "Cache-Control": "max-age=31536000, immutable"
   }
+}
