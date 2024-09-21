@@ -3,17 +3,48 @@ import "../styles/global.css";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <script defer src="https://umami.mihaelamocanu.ro/script.js" data-website-id="5c94282b-ce79-41cb-ac60-016397aae9f8"></script>
-        <title>Madalin Popa</title>
-    </head>
-    <body class="bg-slate-800 text-white font-serif">
-        <div class="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
-            <slot />
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://madalinpopa.com" />
+    <meta property="og:title" content="Madalin Popa | DevOps Engineer" />
+    <meta
+      property="og:description"
+      content="Specialized in cloud infrastructure, DevOps, and automation solutions."
+    />
+    <meta
+      property="og:image"
+      content="https://madalinpopa.com/images/madalin.jpg"
+    />
+    <meta property="og:site_name" content="Madalin Popa" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://madalinpopa.com" />
+    <meta name="twitter:title" content="Madalin Popa | DevOps Engineer" />
+    <meta
+      name="twitter:description"
+      content="Specialized in cloud infrastructure, DevOps, and automation solutions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://madalinpopa.com/images/madalin.jpg"
+    />
+
+    <script
+      defer
+      src="https://umami.mihaelamocanu.ro/script.js"
+      data-website-id="5c94282b-ce79-41cb-ac60-016397aae9f8"></script>
+    <title>Madalin Popa</title>
+  </head>
+  <body class="bg-slate-800 text-white font-serif">
+    <div class="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
+      <slot />
+    </div>
+  </body>
 </html>
