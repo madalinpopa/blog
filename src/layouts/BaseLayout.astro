@@ -5,9 +5,13 @@ import "../styles/global.css";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Madalin Popa, a DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines. Let's collaborate on scalable solutions."
+    />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
@@ -35,12 +39,39 @@ import "../styles/global.css";
       name="twitter:image"
       content="https://madalinpopa.com/images/madalin.jpg"
     />
-
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://madalinpopa.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <script
       defer
       src="https://umami.mihaelamocanu.ro/script.js"
       data-website-id="5c94282b-ce79-41cb-ac60-016397aae9f8"></script>
-    <title>Madalin Popa</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Madalin Popa",
+        "jobTitle": "DevOps Engineer",
+        "description": "Madalin Popa is a DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.",
+        "url": "https://madalinpopa.com",
+        "image": "https://madalinpopa.com/images/madalin.jpg",
+        "sameAs": [
+          "https:https://www.linkedin.com/in/madalinpopa/",
+          "https://x.com/CodeRustle",
+          "https://github.com/madalinpopa"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Code Rustle"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bucharest",
+          "addressCountry": "Romania"
+        }
+      }
+    </script>
+    <title>Madalin Popa | DevOps Engineer, Cloud Solutions Expert</title>
   </head>
   <body class="bg-slate-800 text-white font-serif">
     <div class="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
