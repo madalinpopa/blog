@@ -4,18 +4,18 @@ const { title, company, year, description } = Astro.props;
 
 <div class="relative z-10">
   <div
-    class="font-bold text-xl mb-4 inline-block bg-slate-600 px-4 py-2 rounded-full shadow"
+    class="font-bold text-xl mb-4 inline-block bg-slate-700 px-4 py-2 rounded-full shadow"
   >
     {year}
   </div>
 
-  <div class="ml-8 mb-8 p-6 rounded-lg shadow-md bg-slate-600">
-    <h3 class="text-xl font-semibold">
+  <div class="ml-8 mb-8 p-6 rounded-lg">
+    <h3 class="text-xl font-semibold text-gray-400">
       {title}
     </h3>
     <p class="text-gray-400 mt-1">{company}</p>
-    <p class="mt-2">
-        {description}
+    <p class="prose max-w-none text-white mt-2">
+      {description}
     </p>
   </div>
 </div>
