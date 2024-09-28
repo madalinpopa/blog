@@ -1,50 +1,54 @@
 ---
-import PageContent from "../layouts/PageContent.astro";
-import Hero from "../components/Hero.astro";
-import SectionTitle from "../components/SectionTitle.astro";
-import CTAButton from "../components/CTAButton.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Hero from "../components/layout/Hero.astro";
+import SectionTitle from "../components/headers/SectionTitle.astro";
+import CTAButton from "../components/buttons/CTAButton.astro";
+import Content from "../components/layout/Content.astro";
 ---
 
-<PageContent>
-  <div class="space-y-12">
-    <Hero />
-    <div>
-      <SectionTitle title="Core Expertise" />
-      <ul class="pt-6 list-disc ml-4 prose text-white">
-        <li class="text-gray-400">
-          <span class="font-semibold text-white">DevOps & Automation:</span> Docker,
-          Kubernetes, Ansible, Terraform
-        </li>
-        <li class="text-gray-400">
-          <span class="font-semibold text-white">Cloud Solutions:</span> Azure, AWS
-        </li>
-        <li class="text-gray-400">
-          <span class="font-semibold text-white">CI/CD Pipelines:</span> GitHub Actions,
-          Azure Pipelines, Jenkins
-        </li>
-        <li class="text-gray-400">
-          <span class="font-semibold text-white">Programming Languages:</span> Python,
-          Go
-        </li>
-        <li class="text-gray-400">
-          <span class="font-semibold text-white"
-            >Infrastructure as Code (IaC):</span
-          > Terraform, Azure Resource Manager (ARM) Templates
-        </li>
-      </ul>
-    </div>
-    <div>
+<PageLayout>
+  <Content>
+    <div class="space-y-12">
+      <Hero />
       <div>
-        <p>
-          Need help with your cloud infrastructure, DevOps pipelines, or
-          automation? Whether you’re looking for advice or collaboration on tech
-          projects, don’t hesitate to reach out!
-        </p>
+        <SectionTitle title="Core Expertise" />
+        <ul class="pt-6 list-disc ml-4 prose text-white">
+          <li class="text-gray-400">
+            <span class="font-semibold text-white">DevOps & Automation:</span> Docker,
+            Kubernetes, Ansible, Terraform
+          </li>
+          <li class="text-gray-400">
+            <span class="font-semibold text-white">Cloud Solutions:</span> Azure,
+            AWS
+          </li>
+          <li class="text-gray-400">
+            <span class="font-semibold text-white">CI/CD Pipelines:</span> GitHub
+            Actions, Azure Pipelines, Jenkins
+          </li>
+          <li class="text-gray-400">
+            <span class="font-semibold text-white">Programming Languages:</span>
+            Python, Go
+          </li>
+          <li class="text-gray-400">
+            <span class="font-semibold text-white"
+              >Infrastructure as Code (IaC):</span
+            > Terraform, Azure Resource Manager (ARM) Templates
+          </li>
+        </ul>
       </div>
-      <div class="flex gap-6">
-        <CTAButton href="/services/" text="I Can Help You With This" />
-        <CTAButton href="/contact/" text="Get in Touch" />
+      <div>
+        <div>
+          <p>
+            Need help with your cloud infrastructure, DevOps pipelines, or
+            automation? Whether you’re looking for advice or collaboration on
+            tech projects, don’t hesitate to reach out!
+          </p>
+        </div>
+        <div class="flex gap-6">
+          <CTAButton href="/services/" text="I Can Help You With This" />
+          <CTAButton href="/contact/" text="Get in Touch" />
+        </div>
       </div>
     </div>
-  </div>
-</PageContent>
+  </Content>
+</PageLayout>

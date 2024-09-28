@@ -1,49 +1,53 @@
 ---
-import PageContent from "../layouts/PageContent.astro";
-import PageTitle from "../components/PageTitle.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import PageTitle from "../components/headers/PageTitle.astro";
+import Content from "../components/layout/Content.astro";
 ---
 
-<PageContent>
-  <div>
+<PageLayout>
+  <Content>
     <div>
-      <PageTitle title="About me" />
-      <blockquote>
-        <p class="text-gray-400 italic prose max-w-none">
-          “Everybody in this country should learn to program a computer, because
-          it teaches you how to think ”- Steve Jobs.
+      <div>
+        <PageTitle title="About me" />
+        <blockquote>
+          <p class="text-gray-400 italic prose max-w-none">
+            “Everybody in this country should learn to program a computer,
+            because it teaches you how to think ”- Steve Jobs.
+          </p>
+        </blockquote>
+      </div>
+      <div class="pt-10 prose max-w-none text-white">
+        <p class="indent-6">
+          I'm a self-taught tech enthusiast with a passion for learning and
+          problem-solving. I live in Bucharest, Romania, where my journey into
+          IT began when I was 14. That's when I discovered Linux, and I was
+          immediately hooked. I loved how it gave me the freedom to dig deep
+          into how systems work. Around that time, I also set up my first
+          computer network, and it wasn't long before I realized how much I
+          enjoyed figuring out how everything connected and keeping it running
+          smoothly.
         </p>
-      </blockquote>
+        <p>
+          As I spent more time with technology, I started exploring programming,
+          beginning with simple bash scripts. This opened the door to learning
+          languages like C, Java, and eventually Python, which became my go-to
+          language for automation and building efficient solutions.
+        </p>
+        <p>
+          Over time, I expanded my skills into web development, infrastructure
+          management, and cloud technologies. I'm always looking for ways to
+          automate processes, streamline workflows, and build systems that scale
+          easily. Whether it's coding, setting up cloud environments, or solving
+          complex technical problems, I'm driven by a desire to make things work
+          better and more efficiently.
+        </p>
+        <p>
+          When I'm not working, I'm probably learning something new or tinkering
+          with a new technology. For me, the fun part of tech is seeing
+          everything come together, from the first line of code to a fully
+          functional solution that makes life easier for others.
+        </p>
+      </div>
     </div>
-    <div class="pt-10 prose max-w-none text-white">
-      <p class="indent-6">
-        I'm a self-taught tech enthusiast with a passion for learning and
-        problem-solving. I live in Bucharest, Romania, where my journey into IT
-        began when I was 14. That's when I discovered Linux, and I was
-        immediately hooked. I loved how it gave me the freedom to dig deep into
-        how systems work. Around that time, I also set up my first computer
-        network, and it wasn't long before I realized how much I enjoyed
-        figuring out how everything connected and keeping it running smoothly.
-      </p>
-      <p>
-        As I spent more time with technology, I started exploring programming,
-        beginning with simple bash scripts. This opened the door to learning
-        languages like C, Java, and eventually Python, which became my go-to
-        language for automation and building efficient solutions.
-      </p>
-      <p>
-        Over time, I expanded my skills into web development, infrastructure
-        management, and cloud technologies. I'm always looking for ways to
-        automate processes, streamline workflows, and build systems that scale
-        easily. Whether it's coding, setting up cloud environments, or solving
-        complex technical problems, I'm driven by a desire to make things work
-        better and more efficiently.
-      </p>
-      <p>
-        When I'm not working, I'm probably learning something new or tinkering
-        with a new technology. For me, the fun part of tech is seeing everything
-        come together, from the first line of code to a fully functional
-        solution that makes life easier for others.
-      </p>
-    </div>
-  </div>
-</PageContent>
+  </Content>
+</PageLayout>
