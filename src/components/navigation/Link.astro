@@ -5,8 +5,8 @@ const { href, title } = Astro.props;
 <a
   href={href}
   class={Astro.url.pathname === href
-    ? "bg-gray-900 text-white block sm:inline rounded-md px-3 py-2 text-base sm:text-sm font-medium"
-    : "rounded-md px-3 py-2 block sm:inline text-base sm:text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"}
+    ? "bg-gray-700 dark:bg-gray-900 text-white block sm:inline rounded-md px-3 py-2 text-base sm:text-sm font-medium"
+    : "rounded-md px-3 py-2 block sm:inline text-base sm:text-sm font-medium dark:text-gray-300 hover:bg-gray-700 hover:text-white"}
 >
   {title}
 </a>
