@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+const allBlogPosts = await getCollection('blog');
+
+const blogPosts2024 = allBlogPosts.filter((post) => {
+    const postDate = new Date(post.data.pubDate);
+    return postDate.getFullYear() === 2024;
+});
+
+---
+<ul class="pt-6 ml-4 list-disc space-y-2">
+    {blogPosts2024.map((post) => (
+        <li>
+            <a href={`/posts/${post.slug}`} class="hover:underline text-lg font-semibold text-gray-600 dark:text-gray-300">
+                {post.data.title}
+            </a>
+        </li>
+    ))}
+</ul>

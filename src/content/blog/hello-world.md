@@ -1,12 +1,9 @@
 ---
 title: "My First Blog Post"
-pubDate: 27 Sept. 2024
+slug: "hello-world"
+pubDate: 2024-09-29
+author: "Madalin Popa"
 description: "This is the first post of my new Astro blog."
-layout: "../../layouts/PostLayout.astro"
-author: "Astro Learner"
-image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
 tags: ["astro", "blogging", "learning in public"]
 ---
 

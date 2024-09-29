@@ -76,13 +76,17 @@ import { ViewTransitions } from "astro:transitions";
     <script is:inline>
       function setSystemTheme() {
         const theme =  localStorage.getItem("theme") || "system";
-
-        if (theme === "system" || !(theme in localStorage)) {
+        console.log(theme);
+        if (theme === "system") {
           if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             document.documentElement.classList.add("dark");
           } else {
             document.documentElement.classList.remove("dark");
           }
+        } else if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
         }
       }
 
@@ -100,7 +104,7 @@ import { ViewTransitions } from "astro:transitions";
     <ViewTransitions />
   </head>
   <body
-    class="transition-colors duration-200 bg-gray-100 dark:bg-slate-800 text-black dark:text-white font-serif"
+    class="bg-gray-100 dark:bg-slate-800 text-black dark:text-white font-serif"
   >
     <div class="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
       <slot />
