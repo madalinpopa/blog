@@ -25,7 +25,7 @@ import { Icon } from "astro-icon/components";
   >
     <div class="py-1" role="none">
       <button
-        x-on:click="setTheme('light'); updateIcon('light')"
+        x-on:click="setTheme('light');"
         class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
         role="menuitem"
         tabindex="-1"
@@ -35,7 +35,7 @@ import { Icon } from "astro-icon/components";
         Light
       </button>
       <button
-        x-on:click="setTheme('dark'); updateIcon('dark')"
+        x-on:click="setTheme('dark');"
         class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
         role="menuitem"
         tabindex="-1"
@@ -45,7 +45,7 @@ import { Icon } from "astro-icon/components";
         Dark
       </button>
       <button
-        x-on:click="setTheme('system'); updateIcon('system')"
+        x-on:click="setTheme('system'); location.reload();"
         class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
         role="menuitem"
         tabindex="-1"
@@ -59,32 +59,6 @@ import { Icon } from "astro-icon/components";
 </div>
 
 <script is:inline>
-  function updateIcon(theme) {
-
-    // Get the default theme from local storage
-    const defaultTheme = localStorage.theme || "system";
-
-    // Get the sun and moon icons
-    const sunIcon = document.getElementById("sun-icon");
-    const moonIcon = document.getElementById("moon-icon");
-
-    // Update the icon based on the theme
-    if ( defaultTheme === "dark" || theme === "dark") {
-      sunIcon.classList.remove("hidden");
-      moonIcon.classList.add("hidden");
-    } else if (defaultTheme === "light" || theme === "light"){
-      sunIcon.classList.add("hidden");
-      moonIcon.classList.remove("hidden");
-    } else if(defaultTheme === "system" || theme === "system") {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        sunIcon.classList.remove("hidden");
-        moonIcon.classList.add("hidden");
-      } else {
-        sunIcon.classList.add("hidden");
-        moonIcon.classList.remove("hidden");
-      }
-    }
-  }
 
   document.addEventListener("alpine:init", () => {
     Alpine.data("themeSwitcher", () => ({
@@ -102,8 +76,10 @@ import { Icon } from "astro-icon/components";
           localStorage.removeItem("theme");
           if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             document.documentElement.classList.add("dark");
+            localStorage.theme = "dark";
           } else {
             document.documentElement.classList.remove("dark");
+            localStorage.theme = "light";
           }
         }
         this.theme = newTheme;
@@ -111,6 +87,5 @@ import { Icon } from "astro-icon/components";
       },
     }));
   });
-
-  document.addEventListener("astro:page-load", updateIcon);
+  
 </script>
