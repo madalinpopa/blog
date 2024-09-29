@@ -1,0 +1,9 @@
+---
+import Navbar from "../navigation/Navbar.astro"
+
+const currentPath = Astro.url.pathname;
+---
+
+<div x-data="{showMenu: false, currentUrl: window.location.pathname}">
+  <Navbar  />
+</div>

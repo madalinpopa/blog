@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex items-center ml-4 group">
+  <button id="theme-toggle" x-on:click="showThemeMenu = !showThemeMenu; updateIcon(theme)" aria-label="Toggle theme">
+    <Icon
+      name="sun"
+      class="text-xl hover:text-gray-500 dark:hover:text-gray-400 hidden"
+      id="sun-icon"
+    />
+    <Icon
+      name="moon"
+      class="text-xl hover:text-gray-500 dark:hover:text-gray-400 hidden"
+      id="moon-icon"
+    />
+  </button>
+</div>

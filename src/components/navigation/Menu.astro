@@ -1,0 +1,14 @@
+---
+import Link from "./Link.astro";
+const { items, style } = Astro.props;
+---
+
+<div class:list={[style]}>
+
+  { items && items.length > 0 && items.map((item) => (
+    <Link
+      href={item.href}
+      title={item.title}
+    />
+  )) }
+</div>

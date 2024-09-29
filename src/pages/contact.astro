@@ -1,40 +1,43 @@
 ---
-import PageContent from "../layouts/PageContent.astro";
-import PageTitle from "../components/PageTitle.astro";
-import SectionTitle from "../components/SectionTitle.astro";
-import SocialIcons from "../components/SocialIcons.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import PageTitle from "../components/headers/PageTitle.astro";
+import SectionTitle from "../components/headers/SectionTitle.astro";
+import SocialIcons from "../components/lists/SocialIcons.astro";
+import Content from "../components/layout/Content.astro";
 ---
 
-<PageContent>
-  <div class="space-y-8">
-    <div>
-      <PageTitle title="Contact" />
-      <p class="prose text-white max-w-none">
-        I'd love to hear from you! Whether you have a question, a project idea,
-        or just want to say hi, feel free to reach out via email or social
-        media. I look forward to connecting with you! Let's work on something
-        amazing together.
-      </p>
-    </div>
-    <div class="space-y-6">
-      <SectionTitle title="You can reach me at" />
-      <ul>
-        <li class="text-white">
-          <strong>Email:</strong>
-          <a
-            href="mailto:hello@madalinpopa.com"
-            class="text-gray-400 hover:text-white">hello@madalinpopa.com</a
-          >
-        </li>
-      </ul>
-      <div class="space-y-4">
-        <p class="prose text-white max-w-none">
-          Please also feel free to connect with me on any of these platforms.
+<PageLayout>
+  <Content>
+    <div class="space-y-8">
+      <div>
+        <PageTitle title="Contact" />
+        <p class="prose dark:prose-invert max-w-none">
+          I'd love to hear from you! Whether you have a question, a project
+          idea, or just want to say hi, feel free to reach out via email or
+          social media. I look forward to connecting with you! Let's work on
+          something amazing together.
         </p>
-        <div>
-          <SocialIcons />
+      </div>
+      <div class="space-y-6">
+        <SectionTitle title="You can reach me at" />
+        <ul>
+          <li>
+            <strong>Email:</strong>
+            <a
+              href="mailto:hello@madalinpopa.com"
+              class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">hello@madalinpopa.com</a
+            >
+          </li>
+        </ul>
+        <div class="space-y-4">
+          <p class="prose dark:prose-invert max-w-none">
+            Please also feel free to connect with me on any of these platforms.
+          </p>
+          <div>
+            <SocialIcons />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</PageContent>
+  </Content>
+</PageLayout>

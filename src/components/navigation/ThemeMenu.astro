@@ -1,0 +1,116 @@
+---
+import ThemeButton from "../buttons/ThemeButton.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div x-data="themeSwitcher" class="relative inline-block text-left">
+  <div>
+    <ThemeButton />
+  </div>
+
+  <div
+    class="absolute right-0 z-10 mt-4 w-40 origin-top-right rounded-md bg-white dark:bg-slate-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+    role="menu"
+    x-cloak
+    x-show="showThemeMenu"
+    x-transition:enter="transition ease-out duration-100"
+    x-transition:enter-start="transform opacity-0 scale-95"
+    x-transition:enter-end="transform opacity-100 scale-100"
+    x-transition:leave="transition ease-in duration-75"
+    x-transition:leave-start="transform opacity-100 scale-100"
+    x-transition:leave-end="transform opacity-0 scale-95"
+    aria-orientation="vertical"
+    aria-labelledby="menu-button"
+    tabindex="-1"
+  >
+    <div class="py-1" role="none">
+      <button
+        x-on:click="setTheme('light'); updateIcon('light')"
+        class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
+        role="menuitem"
+        tabindex="-1"
+        id="menu-item-0"
+      >
+        <Icon name="sun" class="text-xl" />
+        Light
+      </button>
+      <button
+        x-on:click="setTheme('dark'); updateIcon('dark')"
+        class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
+        role="menuitem"
+        tabindex="-1"
+        id="menu-item-1"
+      >
+        <Icon name="moon" class="text-xl" />
+        Dark
+      </button>
+      <button
+        x-on:click="setTheme('system'); updateIcon('system')"
+        class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
+        role="menuitem"
+        tabindex="-1"
+        id="menu-item-2"
+      >
+        <Icon name="computer" class="text-xl" />
+        System
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function updateIcon(theme) {
+
+    // Get the default theme from local storage
+    const defaultTheme = localStorage.theme || "system";
+
+    // Get the sun and moon icons
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+
+    // Update the icon based on the theme
+    if ( defaultTheme === "dark" || theme === "dark") {
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+    } else if (defaultTheme === "light" || theme === "light"){
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    } else if(defaultTheme === "system" || theme === "system") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        sunIcon.classList.remove("hidden");
+        moonIcon.classList.add("hidden");
+      } else {
+        sunIcon.classList.add("hidden");
+        moonIcon.classList.remove("hidden");
+      }
+    }
+  }
+
+  document.addEventListener("alpine:init", () => {
+    Alpine.data("themeSwitcher", () => ({
+      theme: localStorage.theme || "system",
+      showThemeMenu: false,
+
+      setTheme(newTheme) {
+        if (newTheme === "light") {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else if (newTheme === "dark") {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        } else {
+          localStorage.removeItem("theme");
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
+        this.theme = newTheme;
+        this.showThemeMenu = false;
+      },
+    }));
+  });
+
+  document.addEventListener("astro:page-load", updateIcon);
+</script>

@@ -1,56 +1,59 @@
 ---
-import PageContent from "../layouts/PageContent.astro";
-import PageTitle from "../components/PageTitle.astro";
-import JobCard from "../components/JobCard.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import PageTitle from "../components/headers/PageTitle.astro";
+import JobCard from "../components/lists/JobCard.astro";
+import Content from "../components/layout/Content.astro";
 ---
 
-<PageContent>
-  <div>
-    <PageTitle title="Experience" />
+<PageLayout>
+  <Content>
+    <div>
+      <PageTitle title="Experience" />
 
-    <p class="pb-12 indent-6">
-      Throughout my career, I’ve had the opportunity to work with a variety of
-      technologies and teams, tackling challenges in cloud infrastructure,
-      DevOps, and software development. Below, you’ll find an overview of the
-      key roles I’ve held and the valuable lessons and skills I’ve gained along
-      the way.
-    </p>
+      <p class="pb-12 indent-6">
+        Throughout my career, I’ve had the opportunity to work with a variety of
+        technologies and teams, tackling challenges in cloud infrastructure,
+        DevOps, and software development. Below, you’ll find an overview of the
+        key roles I’ve held and the valuable lessons and skills I’ve gained
+        along the way.
+      </p>
 
-    <div class="space-y-8">
-      <div class="relative">
-        <div class="absolute top-0 left-4 h-full w-0.5 bg-slate-600"></div>
+      <div class="space-y-8">
+        <div class="relative">
+          <div class="absolute top-0 left-4 h-full w-0.5 bg-gray-400 dark:bg-slate-600"></div>
 
-        <JobCard
-          year="2024"
-          title="Senior DevOps Engineer"
-          company="ING Bank"
-          description="As a Senior DevOps Engineer, I manage and optimize Azure and DevOps environments to enhance scalability and consistency. My daily tasks include writing Python scripts for automating Azure pipelines and developing Ansible playbooks for infrastructure management. I work extensively with Docker and Linux, focusing on CI/CD processes to streamline development and improve deployment reliability."
-        />
-        <JobCard
-          year="2023"
-          title="DevOps Engineer Expert"
-          company="Romanian National Health Insurance House (CNAS)"
-          description="In this role, I was responsible for setting up and configuring Kubernetes environments, automating tasks with Ansible, and developing CI/CD pipelines. I worked closely with cross-functional teams to address technical issues and provide solutions using Docker, Java, Spring, and Python. This role also involved creating virtual machine environments and containerizing applications for better scalability and performance."
-        />
-        <JobCard
-          year="2021"
-          title="Azure Support Escalation Engineer"
-          company="Microsoft"
-          description="I supported the Azure App Service team by providing troubleshooting and support for technologies such as Java, Python, NodeJS, and PHP. My focus was on diagnosing and resolving cloud-related issues using Azure SDKs and Docker. As a subject matter expert in Python and Linux, I also conducted training sessions for internal teams to enhance their technical skills and improve response times for critical issues."
-        />
-        <JobCard
-          year="2016"
-          title="Fusion Technical Support Engineer"
-          company="Oracle"
-          description="At Oracle, I provided technical support for the Fusion HCM Cloud Apps, focusing on troubleshooting Java-based applications and web services. My role involved working closely with SOA and web services to resolve complex application issues, helping clients optimize their cloud applications and improve performance."
-        />
-        <JobCard
-          year="2014"
-          title="Network Administrator"
-          company="RIN Hotels"
-          description="As a Network Administrator at RIN Hotels, I was responsible for installing and supporting various network types, including LANs and WANs, as well as internet and intranet systems. My role included maintaining network hardware and software, monitoring networks for security and performance, and identifying and solving network issues. I ensured the stability and availability of the network infrastructure while maintaining system integrity across the company’s operations. I also played a key role in designing and deploying networks, configuring protocols, managing directory services, and assigning network addresses."
-        />
+          <JobCard
+            year="2024"
+            title="Senior DevOps Engineer"
+            company="ING Bank"
+            description="As a Senior DevOps Engineer, I manage and optimize Azure and DevOps environments to enhance scalability and consistency. My daily tasks include writing Python scripts for automating Azure pipelines and developing Ansible playbooks for infrastructure management. I work extensively with Docker and Linux, focusing on CI/CD processes to streamline development and improve deployment reliability."
+          />
+          <JobCard
+            year="2023"
+            title="DevOps Engineer Expert"
+            company="Romanian National Health Insurance House (CNAS)"
+            description="In this role, I was responsible for setting up and configuring Kubernetes environments, automating tasks with Ansible, and developing CI/CD pipelines. I worked closely with cross-functional teams to address technical issues and provide solutions using Docker, Java, Spring, and Python. This role also involved creating virtual machine environments and containerizing applications for better scalability and performance."
+          />
+          <JobCard
+            year="2021"
+            title="Azure Support Escalation Engineer"
+            company="Microsoft"
+            description="I supported the Azure App Service team by providing troubleshooting and support for technologies such as Java, Python, NodeJS, and PHP. My focus was on diagnosing and resolving cloud-related issues using Azure SDKs and Docker. As a subject matter expert in Python and Linux, I also conducted training sessions for internal teams to enhance their technical skills and improve response times for critical issues."
+          />
+          <JobCard
+            year="2016"
+            title="Fusion Technical Support Engineer"
+            company="Oracle"
+            description="At Oracle, I provided technical support for the Fusion HCM Cloud Apps, focusing on troubleshooting Java-based applications and web services. My role involved working closely with SOA and web services to resolve complex application issues, helping clients optimize their cloud applications and improve performance."
+          />
+          <JobCard
+            year="2014"
+            title="Network Administrator"
+            company="RIN Hotels"
+            description="As a Network Administrator at RIN Hotels, I was responsible for installing and supporting various network types, including LANs and WANs, as well as internet and intranet systems. My role included maintaining network hardware and software, monitoring networks for security and performance, and identifying and solving network issues. I ensured the stability and availability of the network infrastructure while maintaining system integrity across the company’s operations. I also played a key role in designing and deploying networks, configuring protocols, managing directory services, and assigning network addresses."
+          />
+        </div>
       </div>
     </div>
-  </div>
-</PageContent>
+  </Content>
+</PageLayout>

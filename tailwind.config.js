@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const { addDynamicIconSelectors } = require("@iconify/tailwind");
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue}"],
   theme: {
@@ -21,5 +22,7 @@ export default {
     require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
     require("@tailwindcss/forms"),
+    addDynamicIconSelectors(),
   ],
+  darkMode: "selector",
 };
