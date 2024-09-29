@@ -3,7 +3,7 @@ import ThemeButton from "../buttons/ThemeButton.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<div x-data="themeSwitcher" class="relative inline-block text-left">
+<div  x-data="themeSwitcher" x-data="themeSwitcher" x-init="$watch('theme', () => setIconTheme() )" class="relative inline-block text-left">
   <div>
     <ThemeButton />
   </div>
@@ -45,7 +45,7 @@ import { Icon } from "astro-icon/components";
         Dark
       </button>
       <button
-        x-on:click="setTheme('system'); location.reload();"
+        x-on:click="setTheme('system');"
         class="flex gap-2 w-full items-center rounded-md px-4 py-2 text-sm hover:bg-gray-700 hover:text-white"
         role="menuitem"
         tabindex="-1"

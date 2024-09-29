@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 ---
 
-<html lang="en" x-data>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
 
@@ -73,16 +73,28 @@ import { ViewTransitions } from 'astro:transitions';
         }
       }
     </script>
-    <script is:inline data-astro-rerun>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
+    <script is:inline>
+      function setSystemTheme() {
+        const theme =  localStorage.getItem("theme") || "system";
+
+        if (theme === "system" || !(theme in localStorage)) {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
       }
+
+      // Set the system theme on page load
+      setSystemTheme();
+
+      // Set the system theme when the page is loaded
+      document.addEventListener('astro:page-load', e => setSystemTheme());
+
+      // Set the system theme when the user changes the system theme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => setSystemTheme());
+
     </script>
     <title>Madalin Popa | DevOps Engineer</title>
     <ViewTransitions />
