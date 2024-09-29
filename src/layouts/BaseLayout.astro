@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css";
+import { ViewTransitions } from 'astro:transitions';
 ---
 
-<html lang="en">
+<html lang="en" x-data transition:animate="fade">
   <head>
     <meta charset="utf-8" />
 
@@ -72,9 +73,23 @@ import "../styles/global.css";
         }
       }
     </script>
+    <script is:inline data-astro-rerun>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Madalin Popa | DevOps Engineer</title>
+    <ViewTransitions />
   </head>
-  <body class="bg-white dark:bg-slate-800 text-black  dark:text-white font-serif">
+  <body
+    class="transition-colors duration-200 bg-gray-100 dark:bg-slate-800 text-black dark:text-white font-serif"
+  >
     <div class="min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
       <slot />
     </div>

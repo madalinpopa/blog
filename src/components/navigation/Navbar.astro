@@ -2,6 +2,7 @@
 import Menu from "./Menu.astro";
 import SocialIcons from "../lists/SocialIcons.astro";
 import MenuButton from "../buttons/MenuButton.astro";
+import ThemeMenu from "./ThemeMenu.astro";
 
 const menuItems = [
   { title: "Home", href: "/" },
@@ -21,12 +22,17 @@ const menuItems = [
             <SocialIcons />
           </div>
           <!-- Desktop menu -->
-          <div class="hidden sm:ml-6 md:block">
+          <div class="hidden sm:ml-6 md:flex items-center">
             <Menu items={menuItems} style={"flex space-x-4"} />
+            <!-- Theme menu -->
+            <ThemeMenu />
           </div>
 
           <!-- Menu button -->
-          <MenuButton />
+          <div class="flex md:hidden">
+            <ThemeMenu />
+            <MenuButton />
+          </div>
         </div>
       </div>
       <!-- Mobile menu -->
