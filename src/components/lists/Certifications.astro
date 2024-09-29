@@ -1,0 +1,12 @@
+---
+const { items } = Astro.props;
+---
+
+<ul class="pt-6 list-disc ml-4 prose text-white">
+  { items && items.length > 0 && items.map((item) => (
+    <li class=" text-gray-600 dark:text-gray-400">
+    <span class="font-semibold">{item.title}:</span> {item.description}
+  </li>
+  ))}
+
+</ul>

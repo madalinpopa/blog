@@ -4,21 +4,31 @@ import PageTitle from "../components/headers/PageTitle.astro";
 import ServiceItem from "../components/lists/ServiceItem.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
 import Content from "../components/layout/Content.astro";
+import Certifications from "../components/lists/Certifications.astro";
+
+const certifications = [
+  { title: "AZ-104", description: "Azure Administrator Associate" },
+  { title: "AZ-204", description: "Azure Developer Associate" },
+  { title: "AZ-400", description: "DevOps Engineer Expert" },
+  { title: "AZ-900", description: "Azure Fundamentals" },
+  { title: "KCNA", description: "Kubernetes and Cloud Native Associate" },
+  { title: "CKAD", description: "Certified Kubernetes Application Developer" },
+  { title: "Docker", description: "Foundations Professional Certificate" },
+];
 ---
 
 <PageLayout>
   <Content>
     <div class="space-y-12">
       <div>
-        <PageTitle title="Let’s Work on These Together" />
+        <PageTitle title="Let's Work Together on Your Next Big Project" />
 
         <p class="prose dark:prose-invert indent-6 max-w-none">
-          When it comes to cloud infrastructure, DevOps pipelines, and
-          automation, I’m here to help you streamline your workflows and build
-          scalable, efficient solutions. With a strong background in Python,
-          cloud services, and automation tools, I can support your project at
-          every stage – from planning to deployment. Let’s take your ideas and
-          turn them into reliable, scalable solutions.
+          Need help with cloud infrastructure, DevOps, or automation? I’m here
+          to make things easier for you! Whether you’re just starting or need
+          expert advice to scale your project, I’ll work with you every step of
+          the way. From brainstorming ideas to implementing scalable solutions,
+          let’s tackle your challenges together and make your vision a reality.
         </p>
       </div>
       <div>
@@ -34,9 +44,9 @@ import Content from "../components/layout/Content.astro";
             running smoothly and consistently.
           </ServiceItem>
           <ServiceItem title="Cloud Solutions">
-            Whether you’re using Azure or AWS, I’ll help design and implement
+            Whether you're using Azure or AWS, I'll help design and implement
             cloud architectures that meet your unique business needs. From cloud
-            migration to setting up secure, scalable environments, I’ll ensure
+            migration to setting up secure, scalable environments, I'll ensure
             your cloud solutions are optimized for performance, security, and
             cost-efficiency.
           </ServiceItem>
@@ -50,15 +60,15 @@ import Content from "../components/layout/Content.astro";
           <ServiceItem title="Infrastructure as Code (IaC)">
             Say goodbye to manual configurations and ensure your infrastructure
             is reproducible, scalable, and version-controlled. Using Terraform
-            and ARM templates, I’ll automate the provisioning of your cloud
+            and ARM templates, I'll automate the provisioning of your cloud
             resources, helping you manage infrastructure with the same
             discipline as code.
           </ServiceItem>
           <ServiceItem title="Python & Go Development">
             From automation scripts to full-scale web applications, I can help
             you write clean, maintainable, and efficient code in Python and Go.
-            Whether you’re looking to build something from scratch or optimize
-            existing codebases, I’ve got you covered.
+            Whether you're looking to build something from scratch or optimize
+            existing codebases, I've got you covered.
           </ServiceItem>
         </div>
       </div>
@@ -66,35 +76,9 @@ import Content from "../components/layout/Content.astro";
         <div>
           <SectionTitle title="Certifications" />
         </div>
-        <ul class="pt-6 list-disc ml-4 prose text-white">
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">AZ-104:</span> Azure Administrator
-            Associate
-          </li>
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">AZ-204:</span> Azure Developer
-            Associate
-          </li>
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">AZ-400:</span> DevOps Engineer
-            Expert
-          </li>
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">AZ-900:</span> Azure Fundamentals
-          </li>
-          <li class="text-gray-400">
-            <span class="font semibold text-white">KCNA:</span> Kubernetes and Cloud
-            Native Associate
-          </li>
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">CKAD:</span> Certified Kubernetes
-            Application Developer
-          </li>
-          <li class="text-gray-400">
-            <span class="font-semibold text-white">Docker:</span> Foundations Professional
-            Certificate
-          </li>
-        </ul>
+        <div>
+          <Certifications items={certifications} />
+        </div>
       </div>
     </div>
   </Content>
