@@ -65,6 +65,16 @@ import { Icon } from "astro-icon/components";
       theme: localStorage.theme || "system",
       showThemeMenu: false,
 
+      setIconTheme() {
+        if (this.theme === "system") {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            this.theme = "dark";
+          } else {
+            this.theme = "light";
+          }
+        }
+      },
+
       setTheme(newTheme) {
         if (newTheme === "light") {
           document.documentElement.classList.remove("dark");

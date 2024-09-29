@@ -7,6 +7,7 @@ import { Icon } from "astro-icon/components";
     <Icon
       name="sun"
       x-cloak
+      x-init="setIconTheme;"
       x-show="theme === 'dark'"
       class="text-xl hover:text-gray-500 dark:hover:text-gray-400"
       id="sun-icon"
@@ -14,6 +15,7 @@ import { Icon } from "astro-icon/components";
     <Icon
       x-cloak
       x-show="theme === 'light'"
+      x-init="setIconTheme;"
       name="moon"
       class="text-xl hover:text-gray-500 dark:hover:text-gray-400"
       id="moon-icon"
