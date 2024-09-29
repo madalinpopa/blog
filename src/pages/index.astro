@@ -2,14 +2,18 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import Hero from "../components/layout/Hero.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
-import CTAButton from "../components/buttons/CTAButton.astro";
 import Content from "../components/layout/Content.astro";
+import Expertise from "../components/lists/Expertise.astro";
 ---
 
 <PageLayout>
   <Content>
-    <div class="space-y-12">
+    <div class="space-y-8">
       <Hero />  
+      <div>
+        <SectionTitle title="Core Expertise" />
+        <Expertise />
+      </div>
     </div>
   </Content>
 </PageLayout>

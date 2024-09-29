@@ -4,6 +4,7 @@ import PageTitle from "../components/headers/PageTitle.astro";
 import JobCard from "../components/lists/JobCard.astro";
 import Content from "../components/layout/Content.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
+import Expertise from "../components/lists/Expertise.astro";
 ---
 
 <PageLayout>
@@ -11,31 +12,7 @@ import SectionTitle from "../components/headers/SectionTitle.astro";
     <div class="space-y-12">
       <div>
         <PageTitle title="Core Expertise" />
-        <ul class="list-disc ml-4 prose text-white">
-          <li class="dark:text-gray-400 text-gray-600">
-            <span class="font-semibold">DevOps & Automation:</span> Docker, Kubernetes,
-            Ansible, Terraform
-          </li>
-          <li class="text-gray-600 dark:text-gray-400">
-            <span class="font-semibold dark:text-white">Cloud Solutions:</span> Azure,
-            AWS
-          </li>
-          <li class="text-gray-600 dark:text-gray-400">
-            <span class="font-semibold dark:text-white">CI/CD Pipelines:</span> GitHub
-            Actions, Azure Pipelines, Jenkins
-          </li>
-          <li class="text-gray-600 dark:text-gray-400">
-            <span class="font-semibold dark:text-white"
-              >Programming Languages:</span
-            >
-            Python, Go
-          </li>
-          <li class="text-gray-600 dark:text-gray-400">
-            <span class="font-semibold dark:text-white"
-              >Infrastructure as Code (IaC):</span
-            > Terraform, Azure Resource Manager (ARM) Templates
-          </li>
-        </ul>
+        <Expertise />
       </div>
 
       <div class="space-y-8">
