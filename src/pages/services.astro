@@ -1,4 +1,6 @@
 ---
+import { AstroSeo } from "@astrolib/seo";
+
 import PageLayout from "../layouts/PageLayout.astro";
 import PageTitle from "../components/headers/PageTitle.astro";
 import ServiceItem from "../components/lists/ServiceItem.astro";
@@ -12,10 +14,19 @@ const certifications = [
   { title: "AZ-400", description: "DevOps Engineer Expert" },
   { title: "AZ-900", description: "Azure Fundamentals" },
   { title: "KCNA", description: "Kubernetes and Cloud Native Associate" },
-  { title: "CKAD", description: "Certified Kubernetes Application Developer" },
+  {
+    title: "CKAD",
+    description: "Certified Kubernetes Application Developer",
+  },
   { title: "Docker", description: "Foundations Professional Certificate" },
 ];
 ---
+
+<AstroSeo
+  title="Madalin Popa | Solutions"
+  description="Need help with cloud infrastructure, DevOps, or automation? I’m here to make things easier for you! Whether you’re just starting or need expert advice to scale your project, I’ll work with you every step of the way. From brainstorming ideas to implementing scalable solutions, let’s tackle your challenges together and make your vision a reality."
+  canonical="https://madalinpopa.com/services"
+/>
 
 <PageLayout>
   <Content>

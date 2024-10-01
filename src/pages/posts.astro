@@ -1,10 +1,18 @@
 ---
+import { AstroSeo } from "@astrolib/seo";
+
 import PageLayout from "../layouts/PageLayout.astro";
 import PageTitle from "../components/headers/PageTitle.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
 import Content from "../components/layout/Content.astro";
 import BlogPosts from "../components/lists/BlogPosts.astro";
 ---
+
+<AstroSeo
+  title="Madalin Popa | Posts"
+  description="I'd love to hear from you! Whether you have a question, a project idea, or just want to say hi, feel free to reach out via email or social media."
+  canonical="https://madalinpopa.com/posts"
+/>
 
 <PageLayout>
   <Content>

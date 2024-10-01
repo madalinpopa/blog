@@ -1,4 +1,6 @@
 ---
+import { AstroSeo } from "@astrolib/seo";
+
 import PageLayout from "../layouts/PageLayout.astro";
 import PageTitle from "../components/headers/PageTitle.astro";
 import JobCard from "../components/lists/JobCard.astro";
@@ -6,6 +8,12 @@ import Content from "../components/layout/Content.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
 import Expertise from "../components/lists/Expertise.astro";
 ---
+
+<AstroSeo
+  title="Madalin Popa | Experience"
+  description="Throughout my career, I've had the opportunity to work with a variety of technologies and teams, tackling challenges in cloud infrastructure, DevOps, and software development. Below, you'll find an overview of the key roles I've held and the valuable lessons and skills I've gained along the way."
+  canonical="https://madalinpopa.com/experience"
+/>
 
 <PageLayout>
   <Content>

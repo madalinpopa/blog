@@ -1,8 +1,16 @@
 ---
+import { AstroSeo } from "@astrolib/seo";
+
 import PageLayout from "../layouts/PageLayout.astro";
 import PageTitle from "../components/headers/PageTitle.astro";
 import Content from "../components/layout/Content.astro";
 ---
+
+<AstroSeo
+  title="Madalin Popa | About me"
+  description="I'm a self-taught tech enthusiast with a passion for learning and problem-solving. I live in Bucharest, Romania, where my journey into IT began when I was 14."
+  canonical="https://madalinpopa.com/about"
+/>
 
 <PageLayout>
   <Content>
@@ -10,7 +18,9 @@ import Content from "../components/layout/Content.astro";
       <div>
         <PageTitle title="About me" />
         <blockquote>
-          <p class="text-gray-500 dark:text-gray-400 italic prose dark:prose-invert max-w-none">
+          <p
+            class="text-gray-500 dark:text-gray-400 italic prose dark:prose-invert max-w-none"
+          >
             “Everybody in this country should learn to program a computer,
             because it teaches you how to think ”- Steve Jobs.
           </p>
