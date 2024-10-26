@@ -7,6 +7,20 @@ import JobCard from "../components/lists/JobCard.astro";
 import Content from "../components/layout/Content.astro";
 import SectionTitle from "../components/headers/SectionTitle.astro";
 import Expertise from "../components/lists/Expertise.astro";
+import Certifications from "../components/lists/Certifications.astro";
+
+const certifications = [
+  { title: "AZ-104", description: "Azure Administrator Associate" },
+  { title: "AZ-204", description: "Azure Developer Associate" },
+  { title: "AZ-400", description: "DevOps Engineer Expert" },
+  { title: "AZ-900", description: "Azure Fundamentals" },
+  { title: "KCNA", description: "Kubernetes and Cloud Native Associate" },
+  {
+    title: "CKAD",
+    description: "Certified Kubernetes Application Developer",
+  },
+  { title: "Docker", description: "Foundations Professional Certificate" },
+];
 ---
 
 <AstroSeo
@@ -21,6 +35,15 @@ import Expertise from "../components/lists/Expertise.astro";
       <div>
         <PageTitle title="Core Expertise" />
         <Expertise />
+      </div>
+
+      <div>
+        <div>
+          <SectionTitle title="Certifications" />
+        </div>
+        <div>
+          <Certifications items={certifications} />
+        </div>
       </div>
 
       <div class="space-y-8">
