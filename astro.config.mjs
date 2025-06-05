@@ -1,17 +1,17 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import alpine from "@astrojs/alpinejs";
 import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://madalinpopa.com",
-  integrations: [
-    tailwind(),
-    alpine({ entrypoint: "/src/entrypoint" }),
-    icon(),
-    sitemap(),
-  ],
+  integrations: [alpine({ entrypoint: "/src/entrypoint" }), icon(), sitemap()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
