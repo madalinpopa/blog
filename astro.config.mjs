@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://madalinpopa.com",
-  integrations: [alpine({ entrypoint: "/src/entrypoint" }), icon(), sitemap()],
+  integrations: [alpine(), icon(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],
