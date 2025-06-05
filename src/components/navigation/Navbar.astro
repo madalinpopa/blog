@@ -13,7 +13,7 @@ const menuItems = [
 ];
 ---
 
-<nav class="border-b border-b-gray-300 dark:border-b-slate-600 border-1">
+<nav class="border-b border-b-gray-300 dark:border-b-slate-600">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-4xl">
       <div class="flex h-16 items-center justify-between">
@@ -21,21 +21,17 @@ const menuItems = [
           <div class="flex-shrink-0">
             <SocialIcons />
           </div>
-          <!-- Desktop menu -->
           <div class="hidden sm:ml-6 md:flex items-center">
             <Menu items={menuItems} style={"flex space-x-4"} />
-            <!-- Theme menu -->
             <ThemeMenu />
           </div>
 
-          <!-- Menu button -->
           <div class="flex items-center gap-4 md:hidden">
             <ThemeMenu />
             <MenuButton />
           </div>
         </div>
       </div>
-      <!-- Mobile menu -->
       <div x-cloak x-show="showMenu" class="md:hidden" id="mobile-menu">
         <Menu
           items={menuItems}
