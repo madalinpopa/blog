@@ -43,11 +43,11 @@ import { ViewTransitions } from "astro:transitions";
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://madalinpopa.com" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <script
+    <!-- <script
       is:inline
       defer
       src="https://umami.mihaelamocanu.ro/script.js"
-      data-website-id="5c94282b-ce79-41cb-ac60-016397aae9f8"></script>
+      data-website-id="5c94282b-ce79-41cb-ac60-016397aae9f8"></script> -->
     <script is:inline type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -75,7 +75,7 @@ import { ViewTransitions } from "astro:transitions";
     </script>
     <script is:inline>
       function setSystemTheme() {
-        const theme =  localStorage.getItem("theme") || "system";
+        const theme = localStorage.getItem("theme") || "system";
         console.log(theme);
         if (theme === "system") {
           if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -94,11 +94,12 @@ import { ViewTransitions } from "astro:transitions";
       setSystemTheme();
 
       // Set the system theme when the page is loaded
-      document.addEventListener('astro:page-load', e => setSystemTheme());
+      document.addEventListener("astro:page-load", (e) => setSystemTheme());
 
       // Set the system theme when the user changes the system theme
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => setSystemTheme());
-
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", () => setSystemTheme());
     </script>
     <title>Madalin Popa | DevOps Engineer</title>
     <ViewTransitions />
